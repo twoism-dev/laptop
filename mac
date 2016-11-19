@@ -136,9 +136,6 @@ brew "rbenv"
 brew "ruby-build"
 brew "go"
 
-# Databases
-brew "postgres", restart_service: true
-brew "redis", restart_service: true
 EOF
 
 fancy_echo "Configuring Ruby ..."
