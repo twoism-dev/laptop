@@ -75,6 +75,11 @@ gem_install_or_update() {
   fi
 }
 
+fancy_echo "Checking for XCode"
+until $(gcc -v); do
+  sleep 60
+done
+
 if ! command -v brew >/dev/null; then
   fancy_echo "Installing Homebrew ..."
     curl -fsS \
@@ -124,10 +129,12 @@ brew "imagemagick"
 brew "qt"
 
 # Programming languages
+brew "readline"
 brew "libyaml" # should come after openssl
 brew "node"
 brew "rbenv"
 brew "ruby-build"
+brew "go"
 
 # Databases
 brew "postgres", restart_service: true
