@@ -179,9 +179,9 @@ brew_cask_install 'slack'
 # drawing + productivity
 brew_cask_install 'omnigraffle'
 brew_cask_install 'caffeine'
-brew_install_or_upgrade 'things'
-brew_install_or_upgrade 'sublime-text'
-brew_install_or_upgrade 'harvest'
+brew_cask_install_or_upgrade 'things'
+brew_cask_install_or_upgrade 'sublime-text'
+brew_cask_install_or_upgrade 'harvest'
 
 
 fancy_echo "Configuring Ruby ..."
