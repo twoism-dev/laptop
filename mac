@@ -30,6 +30,30 @@ append_to_zshrc() {
   fi
 }
 
+# Brew cask functions
+brew_cask_expand_alias() {
+  brew cask info "$1" 2>/dev/null | head -1 | awk '{gsub(/:/, ""); print $1}'
+}
+
+brew_cask_is_installed() {
+  local NAME=$(brew_cask_expand_alias "$1")
+  brew cask list -1 | grep -Fqx "$NAME"
+}
+
+brew_cask_install() {
+  if ! brew_cask_is_installed "$1"; then
+    brew cask install "$@"
+  fi
+}
+
+brew_cask_install_or_upgrade() {
+  if brew_cask_is_installed "$1"; then
+    echo "$1 is already installed, brew cask upgrade is not yet implemented"
+  else
+    brew cask install "$@"
+  fi
+}
+
 # shellcheck disable=SC2154
 trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
 
@@ -138,6 +162,28 @@ brew "go"
 
 EOF
 
+brew tap caskroom/cask
+brew_install_or_upgrade 'brew-cask'
+
+# databases
+brew_cask_install 'postgres'
+brew_cask_install 'postico'
+# docker
+brew_cask_install 'docker'
+# browsers
+brew_cask_install 'google-chrome'
+brew_cask_install 'postman'
+# communication
+brew_cask_install 'skype'
+brew_cask_install 'slack'
+# drawing + productivity
+brew_cask_install 'omnigraffle'
+brew_cask_install 'caffeine'
+brew_install_or_upgrade 'things'
+brew_install_or_upgrade 'sublime-text'
+brew_install_or_upgrade 'harvest'
+
+
 fancy_echo "Configuring Ruby ..."
 find_latest_ruby() {
   rbenv install -l | grep -v - | tail -1 | sed -e 's/^ *//'
@@ -158,6 +204,10 @@ gem update --system
 gem_install_or_update 'bundler'
 number_of_cores=$(sysctl -n hw.ncpu)
 bundle config --global jobs $((number_of_cores - 1))
+
+fancy_echo "Cleaning up old Homebrew formulae ..."
+brew cleanup
+brew cask cleanup
 
 if [ -f "$HOME/.laptop.local" ]; then
   fancy_echo "Running your customizations from ~/.laptop.local ..."
