@@ -161,9 +161,6 @@ brew "rbenv"
 brew "ruby-build"
 brew "go"
 
-# cask
-brew "brew-cask"
-
 EOF
 
 # databases
