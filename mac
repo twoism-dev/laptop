@@ -127,6 +127,7 @@ brew update
 brew bundle --file=- <<EOF
 tap "thoughtbot/formulae"
 tap "homebrew/services"
+tap "caskroom/cask"
 
 # Unix
 brew "ctags"
@@ -160,10 +161,10 @@ brew "rbenv"
 brew "ruby-build"
 brew "go"
 
-EOF
+# cask
+brew "brew-cask"
 
-brew tap caskroom/cask
-brew_install_or_upgrade 'brew-cask'
+EOF
 
 # databases
 brew_cask_install 'postgres'
