@@ -139,6 +139,7 @@ brew "the_silver_searcher"
 brew "tmux"
 brew "vim"
 brew "zsh"
+brew "antibody"
 
 # Heroku
 brew "heroku-toolbelt"
@@ -163,6 +164,8 @@ brew "go"
 
 EOF
 
+# source control
+brew_cask_install 'sourcetree'
 # databases
 brew_cask_install 'postgres'
 brew_cask_install 'postico'
