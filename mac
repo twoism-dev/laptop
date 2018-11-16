@@ -128,6 +128,7 @@ brew bundle --file=- <<EOF
 tap "thoughtbot/formulae"
 tap "homebrew/services"
 tap "caskroom/cask"
+tap "heroku/brew"
 
 # Unix
 brew "ctags"
@@ -140,14 +141,7 @@ brew "vim"
 brew "zsh"
 
 # Heroku
-brew "heroku-toolbelt"
-brew "parity"
-
-# GitHub
-brew "hub"
-
-# Image manipulation
-brew "imagemagick"
+brew "heroku"
 
 # Programming languages
 brew "readline"
@@ -160,23 +154,22 @@ brew "go"
 EOF
 
 # terminal
-brew_cask_install 'iterm2'
+brew_cask_install_or_upgrade 'iterm2'
 # source control
-brew_cask_install 'tower'
+brew_cask_install_or_upgrade 'tower'
 # databases
-brew_cask_install 'postgres'
-brew_cask_install 'postico'
+brew_cask_install_or_upgrade 'postgres'
+brew_cask_install_or_upgrade 'postico'
 # docker
-brew_cask_install 'docker'
+brew_cask_install_or_upgrade 'docker'
 # browsers
-brew_cask_install 'google-chrome'
-brew_cask_install 'postman'
+brew_cask_install_or_upgrade 'postman'
 # communication
-brew_cask_install 'zoom'
-brew_cask_install 'slack'
+brew_cask_install_or_upgrade 'zoom'
+brew_cask_install_or_upgrade 'slack'
 # drawing + productivity
-brew_cask_install 'omnigraffle'
-brew_cask_install 'caffeine'
+brew_cask_install_or_upgrade 'omnigraffle'
+brew_cask_install_or_upgrade 'caffeine'
 brew_cask_install_or_upgrade 'things'
 brew_cask_install_or_upgrade 'sublime-text'
 brew_cask_install_or_upgrade 'visual-studio-code'
