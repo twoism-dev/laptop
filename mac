@@ -125,19 +125,11 @@ fi
 fancy_echo "Updating Homebrew formulae ..."
 brew update
 brew bundle --file=- <<EOF
-tap "thoughtbot/formulae"
-tap "homebrew/services"
-tap "caskroom/cask"
 tap "heroku/brew"
 
 # Unix
-brew "ctags"
 brew "git"
 brew "openssl"
-brew "rcm"
-brew "the_silver_searcher"
-brew "tmux"
-brew "vim"
 brew "zsh"
 
 # Heroku
@@ -156,14 +148,14 @@ EOF
 # terminal
 brew_cask_install_or_upgrade 'iterm2'
 # source control
-brew_cask_install_or_upgrade 'tower'
+brew_cask_install_or_upgrade 'tower2'
 # databases
 brew_cask_install_or_upgrade 'postgres'
 brew_cask_install_or_upgrade 'postico'
 # docker
 brew_cask_install_or_upgrade 'docker'
 # browsers
-brew_cask_install_or_upgrade 'postman'
+brew_cask_install_or_upgrade 'insomnia'
 # communication
 brew_cask_install_or_upgrade 'zoom'
 brew_cask_install_or_upgrade 'slack'
@@ -171,7 +163,6 @@ brew_cask_install_or_upgrade 'slack'
 brew_cask_install_or_upgrade 'omnigraffle'
 brew_cask_install_or_upgrade 'caffeine'
 brew_cask_install_or_upgrade 'things'
-brew_cask_install_or_upgrade 'sublime-text'
 brew_cask_install_or_upgrade 'visual-studio-code'
 
 fancy_echo "Configuring Ruby ..."
