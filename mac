@@ -188,7 +188,6 @@ bundle config --global jobs $((number_of_cores - 1))
 
 fancy_echo "Cleaning up old Homebrew formulae ..."
 brew cleanup
-brew cask cleanup
 
 if [ -f "$HOME/.laptop.local" ]; then
   fancy_echo "Running your customizations from ~/.laptop.local ..."
