@@ -145,6 +145,8 @@ brew "go"
 
 EOF
 
+# browser
+brew_cask_install_or_upgrade 'google-chrome'
 # terminal
 brew_cask_install_or_upgrade 'iterm2'
 # source control
