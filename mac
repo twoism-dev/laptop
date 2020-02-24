@@ -143,6 +143,9 @@ brew "rbenv"
 brew "ruby-build"
 brew "go"
 
+# Dev Tools
+brew "shellcheck"
+
 EOF
 
 # browser
