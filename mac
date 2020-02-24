@@ -150,7 +150,7 @@ brew_cask_install_or_upgrade 'google-chrome'
 # terminal
 brew_cask_install_or_upgrade 'iterm2'
 # source control
-brew_cask_install_or_upgrade 'tower2'
+brew_cask_install_or_upgrade 'tower'
 # databases
 brew_cask_install_or_upgrade 'postgres'
 brew_cask_install_or_upgrade 'postico'
@@ -166,6 +166,8 @@ brew_cask_install_or_upgrade 'omnigraffle'
 brew_cask_install_or_upgrade 'caffeine'
 brew_cask_install_or_upgrade 'things'
 brew_cask_install_or_upgrade 'visual-studio-code'
+# devtools
+brew_cask_install_or_upgrade 'ngrok'
 
 fancy_echo "Configuring Ruby ..."
 find_latest_ruby() {
