@@ -145,6 +145,7 @@ brew "go"
 
 # Dev Tools
 brew "shellcheck"
+brew "awscli"
 
 EOF
 
@@ -171,6 +172,7 @@ brew_cask_install_or_upgrade 'things'
 brew_cask_install_or_upgrade 'visual-studio-code'
 # devtools
 brew_cask_install_or_upgrade 'ngrok'
+brew_cask_install_or_upgrade 'graphiql'
 
 fancy_echo "Configuring Ruby ..."
 find_latest_ruby() {
