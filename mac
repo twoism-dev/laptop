@@ -146,6 +146,7 @@ brew "go"
 # Dev Tools
 brew "shellcheck"
 brew "awscli"
+brew "yarn"
 
 EOF
 
